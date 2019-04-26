@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import useGlobal from './data/store';
+import CounterComponent from './components/CounterComponent';
+import DisplayCounterConnected from './components/DisplayCounterConnected';
 
 function App() {
+  const [globalState, globalActions] = useGlobal();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CounterComponent 
+        counter={globalState.counter} 
+        addToCounter={globalActions.addToCounter} />
+      <DisplayCounterConnected />
     </div>
   );
 }
