@@ -3,7 +3,7 @@ import React from 'react';
 const CounterComponent = ({ counter, addToCounter}) => (
     <div>
         <p>
-        counter: 
+           counter: 
         {counter}
         </p>
         <button type="button" onClick={() => addToCounter(1)}>
